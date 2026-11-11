@@ -1,0 +1,46 @@
+<resources>
+    <!-- 繁體中文 -->
+    <string name="app_name">返回樣式</string>
+    <string name="desc">把側滑返回箭頭的背景改成縱向小橢圓 / 膠囊（作用於系統介面）</string>
+
+    <string name="title_capsule">返回膠囊</string>
+
+    <string name="group_capsule">膠囊</string>
+    <string name="label_opacity">不透明度</string>
+
+    <string name="group_size">尺寸</string>
+    <string name="label_height">上下高度</string>
+    <string name="label_width">左右寬度</string>
+
+    <string name="group_blur">背景模糊</string>
+    <string name="label_blur_switch">背景模糊</string>
+    <string name="desc_blur_switch">開啟後手勢膠囊背景加入模糊渲染。</string>
+    <string name="label_blur_depth">模糊深度</string>
+
+    <string name="group_gesture">手勢</string>
+    <string name="label_sidebar">長滑返回手勢呼出智慧側邊欄</string>
+    <string name="desc_sidebar">持續拖曳返回手勢呼出智慧側邊欄</string>
+    <string name="label_sidebar_time">長滑時長</string>
+
+    <string name="group_action">操作</string>
+    <string name="hint_realtime">改動會即時寫入系統設定，滑一下返回就能看到效果，不用重新啟動。</string>
+    <string name="btn_kill_systemui">強制停止系統介面</string>
+    <string name="toast_kill_ok">已送出停止指令，系統介面會自動重新啟動</string>
+    <string name="toast_kill_fail">執行失敗，請確認已授予 root</string>
+    <string name="footer">com.panl.hook.backstyle · 需要在 LSPosed 裡啟用並勾選「系統介面」</string>
+    <string name="toast_write_fail">寫入失敗，請確認已授予 root 權限</string>
+
+    <!-- 自訂時長 -->
+    <string name="value_off">關閉</string>
+    <string name="label_custom_time">自訂時長</string>
+    <string name="dialog_time_title">自訂長滑時長</string>
+    <string name="dialog_time_hint">範圍 0 ~ 3600000 毫秒，可以超過滑桿上限；填 0 表示不呼出側邊欄。</string>
+    <string name="dialog_ok">確定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="tag_custom">已自訂</string>
+    <string name="action_follow_slider">返回拖曳滑桿</string>
+    <string name="dialog_update_title">模組已更新</string>
+    <string name="dialog_update_desc">系統介面裡還在跑舊版模組，長滑時長這類設定改了不會生效。重新啟動一次系統介面即可。</string>
+    <string name="dialog_update_restart">立即重新啟動</string>
+    <string name="dialog_update_later">稍後</string>
+</resources>

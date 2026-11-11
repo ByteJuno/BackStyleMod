@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.2.10'
+}
+
+android {
+    namespace = 'com.panl.hook.backstyle'
+    compileSdk = 37
+
+    defaultConfig {
+        applicationId = 'com.panl.hook.backstyle'
+        minSdk = 34
+        targetSdk = 37
+        versionCode = 65
+        versionName = '6.5'
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    signingConfigs {
+        backstyle {
+            storeFile = file('../keystore/backstyle.jks')
+            storePassword = 'backstyle'
+            keyAlias = 'backstyle'
+            keyPassword = 'backstyle'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig = signingConfigs.backstyle
+        }
+        release {
+            // Compose 依赖体积很大（不打 R8 有 21MB），这里开混淆压缩
+            minifyEnabled = true
+            shrinkResources = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), '../proguard-rules.pro'
+            signingConfig = signingConfigs.backstyle
+        }
+    }
+
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
+}
+
+dependencies {
+    // Xposed API 只用本地 jar，免得依赖 api.xposed.info 那个仓库（经常连不上）
+    compileOnly files('libs/api-82.jar')
+
+    // PUI 设计系统（本地 aar）。用 files() 引入 aar 不会自动带上它的 api 依赖，
+    // 所以下面把 Compose 那几个显式写出来，版本和 PUI 的构建基准保持一致。
+    implementation files('libs/pui-release.aar')
+    implementation 'androidx.compose.ui:ui:1.10.4'
+    implementation 'androidx.compose.foundation:foundation:1.10.4'
+    implementation 'androidx.compose.material3:material3:1.4.0'
+    implementation 'androidx.activity:activity-compose:1.8.2'
+}
+
+// 和 PUI 工程保持一致的版本钉死，避免离线缓存里解析出别的版本
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.emoji2:emoji2-views-helper:1.3.0'
+        force 'androidx.compose.material:material-ripple:1.10.4'
+        force 'androidx.activity:activity:1.8.2'
+        force 'androidx.activity:activity-ktx:1.8.2'
+        force 'androidx.activity:activity-compose:1.8.2'
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    浅色模式：PUI 主色，纯色填充整个 108x108 画布。
+    自适应图标的 background 由启动器铺满，再按自己的形状遮罩。
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#00A05A" />
+</shape>

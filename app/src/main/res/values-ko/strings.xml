@@ -1,0 +1,46 @@
+<resources>
+    <!-- 한국어 -->
+    <string name="app_name">뒤로가기 스타일</string>
+    <string name="desc">스와이프 뒤로가기 화살표의 배경을 세로 캡슐로 바꿉니다 (시스템 UI 적용)</string>
+
+    <string name="title_capsule">뒤로가기 캡슐</string>
+
+    <string name="group_capsule">캡슐</string>
+    <string name="label_opacity">불투명도</string>
+
+    <string name="group_size">크기</string>
+    <string name="label_height">높이</string>
+    <string name="label_width">너비</string>
+
+    <string name="group_blur">배경 흐림</string>
+    <string name="label_blur_switch">배경 흐림</string>
+    <string name="desc_blur_switch">제스처 캡슐 배경에 흐림 효과를 추가합니다.</string>
+    <string name="label_blur_depth">흐림 강도</string>
+
+    <string name="group_gesture">제스처</string>
+    <string name="label_sidebar">길게 스와이프해서 스마트 사이드바 열기</string>
+    <string name="desc_sidebar">뒤로가기 제스처를 계속 끌어 스마트 사이드바를 엽니다</string>
+    <string name="label_sidebar_time">길게 누르는 시간</string>
+
+    <string name="group_action">작업</string>
+    <string name="hint_realtime">변경 사항은 즉시 시스템 설정에 기록됩니다. 뒤로가기를 한 번 스와이프하면 적용되며 재시작이 필요 없습니다.</string>
+    <string name="btn_kill_systemui">시스템 UI 강제 종료</string>
+    <string name="toast_kill_ok">종료 명령을 보냈습니다. 시스템 UI가 자동으로 다시 시작됩니다</string>
+    <string name="toast_kill_fail">실행에 실패했습니다. root 권한이 허용되었는지 확인하세요</string>
+    <string name="footer">com.panl.hook.backstyle · LSPosed에서 모듈을 활성화하고 「시스템 UI」를 선택하세요</string>
+    <string name="toast_write_fail">기록에 실패했습니다. root 권한이 허용되었는지 확인하세요</string>
+
+    <!-- 사용자 지정 시간 -->
+    <string name="value_off">끔</string>
+    <string name="label_custom_time">사용자 지정 시간</string>
+    <string name="dialog_time_title">길게 누르는 시간 직접 입력</string>
+    <string name="dialog_time_hint">0~3600000ms. 슬라이더 범위를 넘어 지정할 수 있습니다. 0이면 사이드바를 열지 않습니다.</string>
+    <string name="dialog_ok">확인</string>
+    <string name="dialog_cancel">취소</string>
+    <string name="tag_custom">사용자 지정</string>
+    <string name="action_follow_slider">슬라이더로 돌아가기</string>
+    <string name="dialog_update_title">모듈이 업데이트됨</string>
+    <string name="dialog_update_desc">시스템 UI에서 아직 이전 모듈이 실행 중이라 길게 누르는 시간 같은 설정이 적용되지 않습니다. 시스템 UI를 한 번 다시 시작하세요.</string>
+    <string name="dialog_update_restart">지금 재시작</string>
+    <string name="dialog_update_later">나중에</string>
+</resources>

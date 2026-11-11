@@ -1,0 +1,46 @@
+<resources>
+    <!-- English -->
+    <string name="app_name">Back Style</string>
+    <string name="desc">Replaces the background of the gesture back arrow with a vertical pill (System UI)</string>
+
+    <string name="title_capsule">Back Pill</string>
+
+    <string name="group_capsule">Capsule</string>
+    <string name="label_opacity">Opacity</string>
+
+    <string name="group_size">Size</string>
+    <string name="label_height">Height</string>
+    <string name="label_width">Width</string>
+
+    <string name="group_blur">Background blur</string>
+    <string name="label_blur_switch">Background blur</string>
+    <string name="desc_blur_switch">Adds a blurred backdrop behind the gesture capsule.</string>
+    <string name="label_blur_depth">Blur radius</string>
+
+    <string name="group_gesture">Gestures</string>
+    <string name="label_sidebar">Open the smart sidebar with a long back swipe</string>
+    <string name="desc_sidebar">Keep dragging the back gesture to open the smart sidebar</string>
+    <string name="label_sidebar_time">Hold duration</string>
+
+    <string name="group_action">Actions</string>
+    <string name="hint_realtime">Changes are written to system settings immediately. Just swipe back once — no restart needed.</string>
+    <string name="btn_kill_systemui">Force stop System UI</string>
+    <string name="toast_kill_ok">Stop command sent, System UI will restart by itself</string>
+    <string name="toast_kill_fail">Failed. Make sure root access is granted</string>
+    <string name="footer">com.panl.hook.backstyle · Enable the module in LSPosed and check “System UI”</string>
+    <string name="toast_write_fail">Write failed. Make sure root access is granted</string>
+
+    <!-- custom duration -->
+    <string name="value_off">Off</string>
+    <string name="label_custom_time">Custom duration</string>
+    <string name="dialog_time_title">Custom hold duration</string>
+    <string name="dialog_time_hint">0–3600000 ms, it can exceed the slider range. Set 0 to keep the sidebar closed.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="tag_custom">Custom</string>
+    <string name="action_follow_slider">Back to slider</string>
+    <string name="dialog_update_title">Module updated</string>
+    <string name="dialog_update_desc">System UI is still running the previous module, so changes such as the hold duration will not take effect. Restart System UI once.</string>
+    <string name="dialog_update_restart">Restart now</string>
+    <string name="dialog_update_later">Later</string>
+</resources>

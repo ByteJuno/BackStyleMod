@@ -1,0 +1,52 @@
+<resources>
+    <!-- 默认语言：简体中文 -->
+    <string name="app_name">返回样式</string>
+    <string name="desc">把侧滑返回箭头的背景改成竖向小椭圆 / 胶囊（作用于系统界面）</string>
+
+    <!-- 页面标题 -->
+    <string name="title_capsule">返回胶囊</string>
+
+    <!-- 胶囊 -->
+    <string name="group_capsule">胶囊</string>
+    <string name="label_opacity">不透明度</string>
+
+    <!-- 尺寸 -->
+    <string name="group_size">尺寸</string>
+    <string name="label_height">上下高度</string>
+    <string name="label_width">左右宽度</string>
+
+    <!-- 背景模糊 -->
+    <string name="group_blur">背景模糊</string>
+    <string name="label_blur_switch">背景模糊</string>
+    <string name="desc_blur_switch">开启后手势胶囊背景添加模糊渲染。</string>
+    <string name="label_blur_depth">模糊深度</string>
+
+    <!-- 手势 -->
+    <string name="group_gesture">手势</string>
+    <string name="label_sidebar">长滑返回手势呼出智能侧边栏</string>
+    <string name="desc_sidebar">持续拖动返回手势呼出智能侧边栏</string>
+    <string name="label_sidebar_time">长滑时长</string>
+
+    <!-- 操作 -->
+    <string name="group_action">操作</string>
+    <string name="hint_realtime">改动会实时写进系统设置，滑一下返回就能看到效果，不用重启。</string>
+    <string name="btn_kill_systemui">强制停止系统界面</string>
+    <string name="toast_kill_ok">已发送停止指令，系统界面会自动重启</string>
+    <string name="toast_kill_fail">执行失败，请确认已授予 root</string>
+    <string name="footer">com.panl.hook.backstyle · 需要在 LSPosed 里启用并勾选「系统界面」</string>
+    <string name="toast_write_fail">写入失败：请确认已授予 root 权限</string>
+
+    <!-- 自定义时长 -->
+    <string name="value_off">关闭</string>
+    <string name="label_custom_time">自定义时长</string>
+    <string name="dialog_time_title">自定义长滑时长</string>
+    <string name="dialog_time_hint">范围 0 ~ 3600000 毫秒，可以超过滑块上限；填 0 表示不呼出侧边栏。</string>
+    <string name="dialog_ok">确定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="tag_custom">已自定义</string>
+    <string name="action_follow_slider">返回拖动滑块</string>
+    <string name="dialog_update_title">模块已更新</string>
+    <string name="dialog_update_desc">系统界面里还在跑旧版本的模块，长滑时长这类设置改了不会生效。重启一次系统界面就好。</string>
+    <string name="dialog_update_restart">立即重启</string>
+    <string name="dialog_update_later">稍后</string>
+</resources>

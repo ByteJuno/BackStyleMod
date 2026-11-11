@@ -1,0 +1,46 @@
+<resources>
+    <!-- 日本語 -->
+    <string name="app_name">戻るスタイル</string>
+    <string name="desc">スワイプ戻る矢印の背景を縦長のカプセルに変更します（システム UI 用）</string>
+
+    <string name="title_capsule">戻るカプセル</string>
+
+    <string name="group_capsule">カプセル</string>
+    <string name="label_opacity">不透明度</string>
+
+    <string name="group_size">サイズ</string>
+    <string name="label_height">高さ</string>
+    <string name="label_width">幅</string>
+
+    <string name="group_blur">背景のぼかし</string>
+    <string name="label_blur_switch">背景のぼかし</string>
+    <string name="desc_blur_switch">ジェスチャーカプセルの背景にぼかしを追加します。</string>
+    <string name="label_blur_depth">ぼかしの強さ</string>
+
+    <string name="group_gesture">ジェスチャー</string>
+    <string name="label_sidebar">長いスワイプでスマートサイドバーを開く</string>
+    <string name="desc_sidebar">戻るジェスチャーを長くドラッグしてスマートサイドバーを開きます</string>
+    <string name="label_sidebar_time">長押し時間</string>
+
+    <string name="group_action">操作</string>
+    <string name="hint_realtime">変更はすぐにシステム設定へ書き込まれます。戻るを一度スワイプすれば反映され、再起動は不要です。</string>
+    <string name="btn_kill_systemui">システム UI を強制停止</string>
+    <string name="toast_kill_ok">停止コマンドを送信しました。システム UI は自動で再起動します</string>
+    <string name="toast_kill_fail">実行に失敗しました。root 権限が許可されているか確認してください</string>
+    <string name="footer">com.panl.hook.backstyle · LSPosed でモジュールを有効にし、「システム UI」にチェックしてください</string>
+    <string name="toast_write_fail">書き込みに失敗しました。root 権限が許可されているか確認してください</string>
+
+    <!-- カスタム時間 -->
+    <string name="value_off">オフ</string>
+    <string name="label_custom_time">カスタム時間</string>
+    <string name="dialog_time_title">長押し時間をカスタマイズ</string>
+    <string name="dialog_time_hint">0〜3600000 ミリ秒。スライダーの上限を超えて指定できます。0 にするとサイドバーは開きません。</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">キャンセル</string>
+    <string name="tag_custom">カスタム</string>
+    <string name="action_follow_slider">スライダーに戻る</string>
+    <string name="dialog_update_title">モジュールを更新しました</string>
+    <string name="dialog_update_desc">システム UI ではまだ古いモジュールが動いているため、長押し時間などの設定が反映されません。システム UI を再起動してください。</string>
+    <string name="dialog_update_restart">今すぐ再起動</string>
+    <string name="dialog_update_later">あとで</string>
+</resources>

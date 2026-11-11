@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+.kotlin/
+!gradle/wrapper/gradle-wrapper.jar
+
+# 本机 SDK 路径，不该进仓库
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# 构建产物（发版时挂在 Release 上，别塞进源码）
+*.apk
+*.aab
+*.ap_
+BackStyleMod-*.zip

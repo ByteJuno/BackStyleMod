@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    声明 App 支持的语言，系统「设置 → 应用 → 返回样式 → 语言」里就能单独切换，
+    不用改整个系统的语言。
+    values/ 是简体中文（默认），其余对应各自的 values-xx 目录。
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="zh-CN" />
+    <locale android:name="zh-TW" />
+    <locale android:name="en" />
+    <locale android:name="ja" />
+    <locale android:name="ko" />
+</locale-config>
