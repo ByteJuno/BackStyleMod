@@ -1,5 +1,7 @@
 # 返回样式 · BackStyleMod
 
+我懒，所以README.md是大肥鱼写的
+
 一个 LSPosed 模块：把侧滑返回那个箭头背后的「水滴」换成**竖向胶囊**，可以调尺寸、透明度、背景模糊，长按还能呼出智能侧边栏。
 
 An LSPosed module that replaces the gesture-back "teardrop" behind the arrow with a **vertical capsule** (shape, size, opacity, blurred backdrop, long-press → smart sidebar).
