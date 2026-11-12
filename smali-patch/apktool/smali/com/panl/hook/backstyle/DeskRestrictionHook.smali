@@ -36,7 +36,7 @@
 
     const/4 v2, 0x2
 
-    if-ge v1, v2, :ret
+    if-lt v1, v2, :ret
 
     const/4 v1, 0x0
 
@@ -74,7 +74,7 @@
 
     and-int/lit8 v3, v2, 0x1
 
-    if-nez v3, :ret
+    if-eqz v3, :ret
 
     and-int/lit8 v2, v2, -0x2
 
@@ -86,7 +86,7 @@
 
     sget-boolean v0, Lcom/panl/hook/backstyle/DeskRestrictionHook;->sOnce:Z
 
-    if-eqz v0, :ret
+    if-nez v0, :ret
 
     const/4 v0, 0x1
 

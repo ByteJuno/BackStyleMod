@@ -203,7 +203,7 @@
 
 .field private static sLumAt:J = 0x0L
 
-.field private static sMainHandler:Landroid/os/Handler; = null
+.field private static sTimerHandler:Landroid/os/Handler; = null
 
 .field private static final sPaint:Landroid/graphics/Paint;
 
@@ -584,7 +584,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic A(Z)V
+.method private static A$locked(Z)V
     .locals 0
 
     .line 1
@@ -595,7 +595,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic B(Landroid/graphics/Bitmap;)V
+.method private static B$locked(Landroid/graphics/Bitmap;)V
     .locals 0
 
     .line 1
@@ -606,7 +606,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic C(F)V
+.method private static C$locked(F)V
     .locals 0
 
     .line 1
@@ -617,7 +617,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic D()V
+.method private static D$locked()V
     .locals 1
 
     .line 1
@@ -631,7 +631,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic E()V
+.method private static E$locked()V
     .locals 1
 
     .line 1
@@ -645,7 +645,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic F(Ljava/lang/Object;)V
+.method private static F$locked(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
@@ -656,7 +656,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic G()V
+.method private static G$locked()V
     .locals 1
 
     .line 1
@@ -670,7 +670,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic H()V
+.method private static H$locked()V
     .locals 1
 
     .line 1
@@ -684,29 +684,39 @@
     return-void
 .end method
 
-.method public static bridge synthetic I(Z)V
-    .locals 0
+.method private static I$locked(Z)V
+    .locals 1
 
     .line 1
+    sget-boolean v0, Lcom/panl/hook/backstyle/MainHook;->sTouchDown:Z
+    if-eq v0, p0, :same
     sput-boolean p0, Lcom/panl/hook/backstyle/MainHook;->sTouchDown:Z
 
     .line 2
     .line 3
+    const-string v0, "touch DOWN/END"
+    invoke-static {v0, p0}, Lcom/panl/hook/backstyle/OplusDiag;->state(Ljava/lang/String;Z)V
+    :same
     return-void
 .end method
 
-.method public static bridge synthetic J(Z)V
-    .locals 0
+.method private static J$locked(Z)V
+    .locals 1
 
     .line 1
+    sget-boolean v0, Lcom/panl/hook/backstyle/MainHook;->sWasActive:Z
+    if-eq v0, p0, :same
     sput-boolean p0, Lcom/panl/hook/backstyle/MainHook;->sWasActive:Z
 
     .line 2
     .line 3
+    const-string v0, "ACTIVE transition"
+    invoke-static {v0, p0}, Lcom/panl/hook/backstyle/OplusDiag;->state(Ljava/lang/String;Z)V
+    :same
     return-void
 .end method
 
-.method public static bridge synthetic K(Ljava/lang/Object;)V
+.method private static K$locked(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
@@ -718,7 +728,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic L()V
+.method private static L$locked()V
     .locals 0
 
     .line 1
@@ -730,7 +740,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic M(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
+.method private static M$locked(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
     .locals 0
 
     .line 1
@@ -745,7 +755,7 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic N()V
+.method private static N$locked()V
     .locals 0
 
     .line 1
@@ -757,7 +767,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic O(Ljava/lang/Object;)Z
+.method private static O$locked(Ljava/lang/Object;)Z
     .locals 0
 
     .line 1
@@ -772,7 +782,7 @@
     return p0
 .end method
 
-.method public static bridge synthetic P()V
+.method private static P$locked()V
     .locals 0
 
     .line 1
@@ -784,7 +794,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic Q(Ljava/lang/ClassLoader;I)Landroid/graphics/Bitmap;
+.method private static Q$locked(Ljava/lang/ClassLoader;I)Landroid/graphics/Bitmap;
     .locals 0
 
     .line 1
@@ -799,7 +809,7 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic R(Landroid/view/View;)V
+.method private static R$locked(Landroid/view/View;)V
     .locals 0
 
     .line 1
@@ -811,7 +821,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic S(Landroid/view/View;Landroid/graphics/Canvas;)V
+.method private static S$locked(Landroid/view/View;Landroid/graphics/Canvas;)V
     .locals 0
 
     .line 1
@@ -823,7 +833,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic T(Landroid/graphics/Bitmap;[IFFFF)V
+.method private static T$locked(Landroid/graphics/Bitmap;[IFFFF)V
     .locals 7
 
     .line 1
@@ -856,7 +866,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic U()Z
+.method private static U$locked()Z
     .locals 1
 
     .line 1
@@ -871,7 +881,7 @@
     return v0
 .end method
 
-.method public static bridge synthetic V()V
+.method private static V$locked()V
     .locals 0
 
     .line 1
@@ -883,7 +893,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic a()Z
+.method private static a$locked()Z
     .locals 1
 
     .line 1
@@ -1348,64 +1358,41 @@
     return-void
 .end method
 
-.method private static armSidebarTimer()V
-    .locals 4
-
-    .line 1
-    sget-boolean v0, Lcom/panl/hook/backstyle/MainHook;->sSidebarOn:Z
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    return-void
-
-    .line 6
-    :cond_0
+.method private static armSidebarTimer$locked()V
+    .locals 5
     invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->cancelSidebarTimer()V
-
-    .line 7
-    .line 8
-    .line 9
-    new-instance v0, Lcl;
-
-    .line 10
-    .line 11
-    const/4 v1, 0x1
-
-    .line 12
-    invoke-direct {v0, v1}, Lcl;-><init>(I)V
-
-    .line 13
-    .line 14
-    .line 15
-    sput-object v0, Lcom/panl/hook/backstyle/MainHook;->sSidebarTask:Ljava/lang/Runnable;
-
-    .line 16
-    .line 17
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->mainHandler()Landroid/os/Handler;
-
-    .line 18
-    .line 19
-    .line 20
+    sget-boolean v0, Lcom/panl/hook/backstyle/MainHook;->sSidebarOn:Z
+    if-eqz v0, :done
+    invoke-static {}, Lcom/panl/hook/backstyle/OplusThread;->get_oplusFrame()Landroid/view/View;
+    move-result-object v0
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusThread;->isOwner(Landroid/view/View;)Z
+    move-result v1
+    if-eqz v1, :done
+    invoke-virtual {v0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
     move-result-object v1
-
-    .line 21
-    sget-wide v2, Lcom/panl/hook/backstyle/MainHook;->sSidebarHoldMs:J
-
-    .line 22
-    .line 23
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 24
-    .line 25
-    .line 26
+    sput-object v1, Lcom/panl/hook/backstyle/MainHook;->sTimerHandler:Landroid/os/Handler;
+    new-instance v2, Lcom/panl/hook/backstyle/OplusSidebarTask;
+    invoke-direct {v2, v0}, Lcom/panl/hook/backstyle/OplusSidebarTask;-><init>(Landroid/view/View;)V
+    sput-object v2, Lcom/panl/hook/backstyle/MainHook;->sSidebarTask:Ljava/lang/Runnable;
+    sget-wide v3, Lcom/panl/hook/backstyle/MainHook;->sSidebarHoldMs:J
+    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    move-result v0
+    if-nez v0, :armed
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->cancelSidebarTimer()V
+    const-string v0, "timer reject: owner queue stopped"
+    goto :log
+    :armed
+    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    const-string v0, "timer armed on view owner"
+    :log
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    :done
     return-void
 .end method
 
-.method public static bridge synthetic b()Z
+.method private static b$locked()Z
     .locals 1
 
     .line 1
@@ -2336,7 +2323,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic c()Z
+.method private static c$locked()Z
     .locals 1
 
     .line 1
@@ -2347,8 +2334,17 @@
     return v0
 .end method
 
-.method private static callShowSideBar()V
+.method private static callShowSideBar$locked()V
     .locals 8
+    const-string v0, "show IPC entry"
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->holdStillActive()Z
+    move-result v0
+    if-nez v0, :oplus_live
+    const-string v0, "reject show: gesture ended"
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    return-void
+    :oplus_live
 
     .line 1
     const-string v0, "BackStyleMod: \u5df2\u8bf7\u6c42\u547c\u51fa\u667a\u80fd\u4fa7\u8fb9\u680f\uff0c\u8d77\u70b9 "
@@ -2693,7 +2689,7 @@
     return v0
 .end method
 
-.method private static cancelSidebarTimer()V
+.method private static cancelSidebarTimer$locked()V
     .locals 2
 
     .line 1
@@ -2705,12 +2701,12 @@
 
     .line 4
     .line 5
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->mainHandler()Landroid/os/Handler;
+    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sTimerHandler:Landroid/os/Handler;
 
     .line 6
     .line 7
     .line 8
-    move-result-object v0
+    if-eqz v0, :cond_0
 
     .line 9
     sget-object v1, Lcom/panl/hook/backstyle/MainHook;->sSidebarTask:Ljava/lang/Runnable;
@@ -3550,7 +3546,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic d()Z
+.method private static d$locked()Z
     .locals 1
 
     .line 1
@@ -3628,8 +3624,30 @@
     return-object v1
 .end method
 
-.method private static doShowSidebar(Landroid/view/View;)V
+.method private static doShowSidebar$locked(Landroid/view/View;)V
     .locals 4
+    invoke-static {p0}, Lcom/panl/hook/backstyle/OplusThread;->isOwner(Landroid/view/View;)Z
+    move-result v0
+    if-eqz v0, :owner_reject
+    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sGeoView:Landroid/view/View;
+    if-ne v0, p0, :owner_reject
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    move-result v0
+    if-nez v0, :owner_ready
+    :owner_reject
+    const-string v0, "reject delayed show: stale view/owner/detached"
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    return-void
+    :owner_ready
+    const-string v0, "bind/show entry"
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->holdStillActive()Z
+    move-result v0
+    if-nez v0, :oplus_live
+    const-string v0, "reject show: gesture ended"
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    return-void
+    :oplus_live
 
     .line 1
     const/4 v0, 0x0
@@ -4420,7 +4438,7 @@
     return v3
 .end method
 
-.method private static drawPill(Landroid/view/View;Landroid/graphics/Canvas;)V
+.method private static drawPill$locked(Landroid/view/View;Landroid/graphics/Canvas;)V
     .locals 29
 
     .line 1
@@ -5658,6 +5676,8 @@
     .line 603
     .line 604
     :cond_15
+    const/4 v0, 0x1
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusThread;->set_oplusPainted(Z)V
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 605
@@ -6017,7 +6037,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic e()Z
+.method private static e$locked()Z
     .locals 1
 
     .line 1
@@ -6969,7 +6989,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic f()Landroid/graphics/RectF;
+.method private static f$locked()Landroid/graphics/RectF;
     .locals 1
 
     .line 1
@@ -7099,7 +7119,7 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic g()F
+.method private static g$locked()F
     .locals 1
 
     .line 1
@@ -7110,7 +7130,7 @@
     return v0
 .end method
 
-.method public static bridge synthetic h()I
+.method private static h$locked()I
     .locals 1
 
     .line 1
@@ -7121,7 +7141,7 @@
     return v0
 .end method
 
-.method private static holdStillActive()Z
+.method private static holdStillActive$locked()Z
     .locals 6
 
     .line 1
@@ -7193,74 +7213,14 @@
     return v1
 .end method
 
+
 .method private static hookAosp(Lde/robv/android/xposed/callbacks/XC_LoadPackage$LoadPackageParam;)V
-    .locals 2
-
-    .line 1
-    :try_start_0
-    const-string v0, "com.android.systemui.navigationbar.gestural.BackPanel"
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lde/robv/android/xposed/callbacks/XC_LoadPackage$LoadPackageParam;->classLoader:Ljava/lang/ClassLoader;
-
-    .line 4
-    .line 5
-    invoke-static {v0, p0}, Lde/robv/android/xposed/XposedHelpers;->findClass(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 9
-    new-instance v0, Lsy;
-
-    .line 10
-    .line 11
-    const/4 v1, 0x0
-
-    .line 12
-    invoke-direct {v0, v1}, Lsy;-><init>(I)V
-
-    .line 13
-    .line 14
-    .line 15
-    const-string v1, "onDraw"
-
-    .line 16
-    .line 17
-    invoke-static {p0, v1, v0}, Lde/robv/android/xposed/XposedBridge;->hookAllMethods(Ljava/lang/Class;Ljava/lang/String;Lde/robv/android/xposed/XC_MethodHook;)Ljava/util/Set;
-
-    .line 18
-    .line 19
-    .line 20
-    const-string p0, "BackStyleMod: \u5df2\u6302\u4e0a com.android.systemui.navigationbar.gestural.BackPanel.onDraw"
-
-    .line 21
-    .line 22
-    invoke-static {p0}, Lde/robv/android/xposed/XposedBridge;->log(Ljava/lang/String;)V
-
-    .line 23
-    .line 24
-    .line 25
-    return-void
-
-    .line 26
-    :catchall_0
-    const-string p0, "BackStyleMod: \u4e5f\u627e\u4e0d\u5230 BackPanel\uff0c\u8fd9\u4e2a\u673a\u578b\u6ca1\u6cd5\u7528"
-
-    .line 27
-    .line 28
-    invoke-static {p0}, Lde/robv/android/xposed/XposedBridge;->log(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
+    .locals 1
+    iget-object v0, p0, Lde/robv/android/xposed/callbacks/XC_LoadPackage$LoadPackageParam;->classLoader:Ljava/lang/ClassLoader;
+    invoke-static {v0}, Lcom/panl/hook/backstyle/NativeBackHook;->install(Ljava/lang/ClassLoader;)V
     return-void
 .end method
+
 
 .method private static hookOplus(Lde/robv/android/xposed/callbacks/XC_LoadPackage$LoadPackageParam;)Z
     .locals 6
@@ -7341,19 +7301,28 @@
 
     .line 34
     .line 35
-    new-instance v3, Lsy;
+    new-instance v3, Lcom/panl/hook/backstyle/OplusDrawHook;
 
     .line 36
     .line 37
     const/4 v4, 0x2
 
     .line 38
-    invoke-direct {v3, v4}, Lsy;-><init>(I)V
+    invoke-direct {v3}, Lcom/panl/hook/backstyle/OplusDrawHook;-><init>()V
 
     .line 39
     .line 40
     .line 41
     invoke-static {v1, v2, v3}, Lde/robv/android/xposed/XposedBridge;->hookAllMethods(Ljava/lang/Class;Ljava/lang/String;Lde/robv/android/xposed/XC_MethodHook;)Ljava/util/Set;
+    move-result-object v2
+    invoke-interface {v2}, Ljava/util/Set;->size()I
+    move-result v2
+    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object v2
+    const-string v3, "onDraw registration handshake count="
+    invoke-virtual {v3, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v2}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -7703,7 +7672,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic i()Ljava/lang/ClassLoader;
+.method private static i$locked()Ljava/lang/ClassLoader;
     .locals 1
 
     .line 1
@@ -7812,7 +7781,7 @@
     return v0
 .end method
 
-.method public static bridge synthetic j()Z
+.method private static j$locked()Z
     .locals 1
 
     .line 1
@@ -7823,7 +7792,7 @@
     return v0
 .end method
 
-.method public static bridge synthetic k()F
+.method private static k$locked()F
     .locals 1
 
     .line 1
@@ -7834,7 +7803,7 @@
     return v0
 .end method
 
-.method public static bridge synthetic l()Z
+.method private static l$locked()Z
     .locals 1
 
     .line 1
@@ -7845,7 +7814,7 @@
     return v0
 .end method
 
-.method public static bridge synthetic m()J
+.method private static m$locked()J
     .locals 2
 
     .line 1
@@ -7856,48 +7825,9 @@
     return-wide v0
 .end method
 
-.method private static mainHandler()Landroid/os/Handler;
-    .locals 2
 
-    .line 1
-    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sMainHandler:Landroid/os/Handler;
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    new-instance v0, Landroid/os/Handler;
-
-    .line 6
-    .line 7
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v1
-
-    .line 11
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v0, Lcom/panl/hook/backstyle/MainHook;->sMainHandler:Landroid/os/Handler;
-
-    .line 15
-    .line 16
-    :cond_0
-    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sMainHandler:Landroid/os/Handler;
-
-    .line 17
-    .line 18
-    return-object v0
-.end method
-
-.method public static bridge synthetic n()Z
+.method private static n$locked()Z
     .locals 1
 
     .line 1
@@ -7935,7 +7865,7 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic o()Z
+.method private static o$locked()Z
     .locals 1
 
     .line 1
@@ -8361,7 +8291,7 @@
     return-object v0
 .end method
 
-.method public static bridge synthetic p()Z
+.method private static p$locked()Z
     .locals 1
 
     .line 1
@@ -8746,7 +8676,7 @@
     return-object v4
 .end method
 
-.method public static bridge synthetic q()V
+.method private static q$locked()V
     .locals 1
 
     .line 1
@@ -8760,7 +8690,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic r()V
+.method private static r$locked()V
     .locals 1
 
     .line 1
@@ -8860,7 +8790,7 @@
     return v0
 .end method
 
-.method private static refreshConfig(Landroid/view/View;)V
+.method private static refreshConfig$locked(Landroid/view/View;)V
     .locals 11
 
     .line 1
@@ -9281,7 +9211,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-gtz v0, :cond_desk_off
+    if-lez v0, :cond_desk_off
 
     const/4 v0, 0x1
 
@@ -9599,7 +9529,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic s()V
+.method private static s$locked()V
     .locals 1
 
     .line 1
@@ -9942,8 +9872,18 @@
     return v0
 .end method
 
-.method private static showSidebar()V
+.method private static showSidebar$locked()V
     .locals 10
+    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sGeoView:Landroid/view/View;
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusThread;->isOwner(Landroid/view/View;)Z
+    move-result v1
+    if-nez v1, :owner_ready
+    const-string v0, "reject geometry: wrong view owner"
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    return-void
+    :owner_ready
+    const-string v0, "timer fired/show geometry"
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
 
     .line 1
     sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sGeoView:Landroid/view/View;
@@ -10190,12 +10130,13 @@
 
     .line 109
     .line 110
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->mainHandler()Landroid/os/Handler;
+    invoke-virtual {v0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
 
     .line 111
     .line 112
     .line 113
     move-result-object v2
+    if-eqz v2, :cond_2
 
     .line 114
     new-instance v3, Lx2;
@@ -10757,7 +10698,7 @@
     return v2
 .end method
 
-.method public static bridge synthetic t()V
+.method private static t$locked()V
     .locals 1
 
     .line 1
@@ -10771,7 +10712,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic u()V
+.method private static u$locked()V
     .locals 1
 
     .line 1
@@ -11120,7 +11061,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic v()V
+.method private static v$locked()V
     .locals 1
 
     .line 1
@@ -11134,7 +11075,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic w(F)V
+.method private static w$locked(F)V
     .locals 0
 
     .line 1
@@ -11449,7 +11390,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic x()V
+.method private static x$locked()V
     .locals 1
 
     .line 1
@@ -11463,7 +11404,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic y(I)V
+.method private static y$locked(I)V
     .locals 0
 
     .line 1
@@ -11474,7 +11415,7 @@
     return-void
 .end method
 
-.method public static bridge synthetic z(J)V
+.method private static z$locked(J)V
     .locals 0
 
     .line 1
@@ -11490,7 +11431,7 @@
 .method public handleLoadPackage(Lde/robv/android/xposed/callbacks/XC_LoadPackage$LoadPackageParam;)V
     .locals 1
 
-    const-string v0, "BackStyleMod: B58 start"
+    const-string v0, "BackStyleMod: OP73-GestureUI start; owner-handler + isolated transaction handshake"
 
     invoke-static {v0}, Lde/robv/android/xposed/XposedBridge;->log(Ljava/lang/String;)V
 
@@ -11531,7 +11472,7 @@
     move-result p0
 
     .line 16
-    if-nez p0, :cond_1
+    # Register native independently of Oplus class presence.
 
     .line 17
     .line 18
@@ -11954,7 +11895,7 @@
 
     move-result v0
 
-    if-nez v0, :end
+    if-eqz v0, :end
 
     # 1) 视图/窗口级手势排除区（桌面首页整屏注册的那块）
     const-string v2, "android.view.View"
@@ -11982,10 +11923,9 @@
 
     invoke-static {v2}, Lcom/panl/hook/backstyle/MainHook;->installRestrictionHook(Ljava/lang/ClassLoader;)V
 
-    # 3) 桌面进程内的软件兜底（SystemUI 不接管时仍能用边缘滑动触发返回）
-    iget-object v2, p0, Lde/robv/android/xposed/callbacks/XC_LoadPackage$LoadPackageParam;->classLoader:Ljava/lang/ClassLoader;
-
-    invoke-static {v2}, Lcom/panl/hook/backstyle/MainHook;->hookDeskTouch(Ljava/lang/ClassLoader;)V
+    # SystemUI owns back after lifting exclusions. Do not arm the independent
+    # Activity/ViewRoot/decor recognizers: they cannot prove SystemUI declined
+    # the gesture and can deliver duplicate onBackPressed calls.
 
     :end
     return-void
@@ -12517,11 +12457,11 @@
 
     cmpg-float v5, v1, v4
 
-    if-gez v5, :act
+    if-ltz v5, :act
 
     cmpl-float v5, v1, v3
 
-    if-lez v5, :act
+    if-gtz v5, :act
 
     goto :rel
 
@@ -12592,7 +12532,7 @@
 
     cmpg-float v4, v4, v5
 
-    if-gez v4, :rel
+    if-ltz v4, :rel
 
     sget v4, Lcom/panl/hook/backstyle/MainHook;->sDY:F
 
@@ -12604,7 +12544,7 @@
 
     cmpl-float v4, v4, v5
 
-    if-lez v4, :rel
+    if-gtz v4, :rel
 
     const/4 v4, 0x0
 
@@ -12613,11 +12553,11 @@
     const/4 v4, 0x0
 
     :unwrap
-    if-nez p0, :rel
+    if-eqz p0, :rel
 
     instance-of v5, p0, Landroid/app/Activity;
 
-    if-eqz v5, :found
+    if-nez v5, :found
 
     const/4 v5, 0x6
 
@@ -13343,6 +13283,1452 @@
     return-void
 .end method
 
+.method public static nativeSidebarSupported()Z
+    .locals 1
+    # Capability policy: runtime config and live independent connection decide readiness.
+    const/4 v0, 0x1
+    return v0
+.end method
+
+.method private static nativeDelay$locked(Landroid/view/View;)J
+    .locals 3
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->nativeSidebarSupported()Z
+    move-result v0
+    if-eqz v0, :off
+    invoke-virtual {p0}, Landroid/view/View;->getDisplay()Landroid/view/Display;
+    move-result-object v0
+    if-eqz v0, :off
+    invoke-virtual {v0}, Landroid/view/Display;->getDisplayId()I
+    move-result v0
+    if-nez v0, :off
+    invoke-static {p0}, Lcom/panl/hook/backstyle/MainHook;->refreshConfig(Landroid/view/View;)V
+    sget-boolean v0, Lcom/panl/hook/backstyle/MainHook;->sSidebarOn:Z
+    if-eqz v0, :off
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    move-result-object v0
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v0
+    const-string v1, "edge_panel_toggle"
+    const/4 v2, 0x0
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v0
+    if-eqz v0, :off
+    sget-wide v0, Lcom/panl/hook/backstyle/MainHook;->sSidebarHoldMs:J
+    return-wide v0
+    :off
+    const-wide/16 v0, -0x1
+    return-wide v0
+.end method
+
+.method private static nativePos(Ljava/lang/Object;Ljava/lang/String;)F
+    .locals 2
+    invoke-static {p0, p1}, Lde/robv/android/xposed/XposedHelpers;->getObjectField(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v0
+    const-string v1, "pos"
+    invoke-static {v0, v1}, Lde/robv/android/xposed/XposedHelpers;->getFloatField(Ljava/lang/Object;Ljava/lang/String;)F
+    move-result v0
+    return v0
+.end method
+
+.method private static nativeBeforeDraw$locked(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 7
+    :try_start
+    iget-object v0, p0, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->thisObject:Ljava/lang/Object;
+    check-cast v0, Landroid/view/View;
+    invoke-static {v0}, Lcom/panl/hook/backstyle/MainHook;->refreshConfig(Landroid/view/View;)V
+    const/4 v1, 0x6
+    new-array v1, v1, [F
+    const-string v2, "backgroundWidth"
+    invoke-static {v0, v2}, Lcom/panl/hook/backstyle/MainHook;->nativePos(Ljava/lang/Object;Ljava/lang/String;)F
+    move-result v3
+    const/4 v4, 0x0
+    aput v3, v1, v4
+    const-string v2, "backgroundHeight"
+    invoke-static {v0, v2}, Lcom/panl/hook/backstyle/MainHook;->nativePos(Ljava/lang/Object;Ljava/lang/String;)F
+    move-result v3
+    const/4 v4, 0x1
+    aput v3, v1, v4
+    const-string v2, "backgroundEdgeCornerRadius"
+    invoke-static {v0, v2}, Lcom/panl/hook/backstyle/MainHook;->nativePos(Ljava/lang/Object;Ljava/lang/String;)F
+    move-result v3
+    const/4 v4, 0x2
+    aput v3, v1, v4
+    const-string v2, "backgroundFarCornerRadius"
+    invoke-static {v0, v2}, Lcom/panl/hook/backstyle/MainHook;->nativePos(Ljava/lang/Object;Ljava/lang/String;)F
+    move-result v3
+    const/4 v4, 0x3
+    aput v3, v1, v4
+    const-string v2, "horizontalTranslation"
+    invoke-static {v0, v2}, Lcom/panl/hook/backstyle/MainHook;->nativePos(Ljava/lang/Object;Ljava/lang/String;)F
+    move-result v3
+    const/4 v4, 0x4
+    aput v3, v1, v4
+    const-string v2, "backgroundAlpha"
+    invoke-static {v0, v2}, Lcom/panl/hook/backstyle/MainHook;->nativePos(Ljava/lang/Object;Ljava/lang/String;)F
+    move-result v3
+    const/4 v4, 0x5
+    aput v3, v1, v4
+    const-string v2, "backstyle.native.snapshot"
+    invoke-virtual {p0, v2, v1}, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->setObjectExtra(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    move-result-object v2
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    move-result-object v2
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+    const/high16 v3, 0x42000000    # 32dp base capsule height
+    mul-float/2addr v3, v2
+    sget v4, Lcom/panl/hook/backstyle/MainHook;->sScale:F
+    mul-float/2addr v3, v4
+    sget v4, Lcom/panl/hook/backstyle/MainHook;->sPillH:F
+    const v5, 0x40666666
+    div-float/2addr v4, v5
+    mul-float/2addr v3, v4
+    const/4 v4, 0x0
+    aget v4, v1, v4
+    const/4 v5, 0x0
+    cmpl-float v5, v4, v5
+    if-lez v5, :done
+    sget v5, Lcom/panl/hook/backstyle/MainHook;->sWidthRatio:F
+    const v6, 0x3f2e147b
+    div-float/2addr v5, v6
+    mul-float/2addr v4, v5
+    sget v5, Lcom/panl/hook/backstyle/MainHook;->sScale:F
+    mul-float/2addr v4, v5
+    const-string v5, "backgroundWidth"
+    invoke-static {v0, v5, v4}, Lcom/panl/hook/backstyle/MainHook;->nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    const-string v5, "backgroundHeight"
+    invoke-static {v0, v5, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    const/high16 v5, 0x40000000
+    div-float/2addr v3, v5
+    const-string v5, "backgroundEdgeCornerRadius"
+    invoke-static {v0, v5, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    const-string v5, "backgroundFarCornerRadius"
+    invoke-static {v0, v5, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    const/4 v5, 0x4
+    aget v3, v1, v5
+    sget v5, Lcom/panl/hook/backstyle/MainHook;->sInsetDp:F
+    mul-float/2addr v5, v2
+    add-float/2addr v3, v5
+    const-string v5, "horizontalTranslation"
+    invoke-static {v0, v5, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    const/4 v5, 0x5
+    aget v3, v1, v5
+    sget v4, Lcom/panl/hook/backstyle/MainHook;->sAlpha:F
+    mul-float/2addr v3, v4
+    const-string v5, "backgroundAlpha"
+    invoke-static {v0, v5, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    :try_end
+    .catch Ljava/lang/Throwable; {:try_start .. :try_end} :failed
+    :done
+    return-void
+    :failed
+    move-exception v0
+    invoke-static {p0}, Lcom/panl/hook/backstyle/MainHook;->nativeAfterDraw(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    invoke-static {}, Lcom/panl/hook/backstyle/NativeBackHook;->logFailure()V
+    return-void
+.end method
+
+.method private static nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    .locals 2
+    invoke-static {p0, p1}, Lde/robv/android/xposed/XposedHelpers;->getObjectField(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v0
+    const-string v1, "pos"
+    invoke-static {v0, v1, p2}, Lde/robv/android/xposed/XposedHelpers;->setFloatField(Ljava/lang/Object;Ljava/lang/String;F)V
+    return-void
+.end method
+
+.method private static nativeAfterDraw$locked(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 4
+    :try_start
+    const-string v0, "backstyle.native.snapshot"
+    invoke-virtual {p0, v0}, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->getObjectExtra(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v1
+    check-cast v1, [F
+    if-eqz v1, :done
+    const/4 v2, 0x0
+    invoke-virtual {p0, v0, v2}, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->setObjectExtra(Ljava/lang/String;Ljava/lang/Object;)V
+    iget-object v0, p0, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->thisObject:Ljava/lang/Object;
+    const-string v2, "backgroundWidth"
+    const/4 v3, 0x0
+    aget v3, v1, v3
+    invoke-static {v0, v2, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeRestore(Ljava/lang/Object;Ljava/lang/String;F)V
+    const-string v2, "backgroundHeight"
+    const/4 v3, 0x1
+    aget v3, v1, v3
+    invoke-static {v0, v2, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeRestore(Ljava/lang/Object;Ljava/lang/String;F)V
+    const-string v2, "backgroundEdgeCornerRadius"
+    const/4 v3, 0x2
+    aget v3, v1, v3
+    invoke-static {v0, v2, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeRestore(Ljava/lang/Object;Ljava/lang/String;F)V
+    const-string v2, "backgroundFarCornerRadius"
+    const/4 v3, 0x3
+    aget v3, v1, v3
+    invoke-static {v0, v2, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeRestore(Ljava/lang/Object;Ljava/lang/String;F)V
+    const-string v2, "horizontalTranslation"
+    const/4 v3, 0x4
+    aget v3, v1, v3
+    invoke-static {v0, v2, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeRestore(Ljava/lang/Object;Ljava/lang/String;F)V
+    const-string v2, "backgroundAlpha"
+    const/4 v3, 0x5
+    aget v3, v1, v3
+    invoke-static {v0, v2, v3}, Lcom/panl/hook/backstyle/MainHook;->nativeRestore(Ljava/lang/Object;Ljava/lang/String;F)V
+    :try_end
+    .catch Ljava/lang/Throwable; {:try_start .. :try_end} :failed
+    :done
+    return-void
+    :failed
+    move-exception v0
+    invoke-static {}, Lcom/panl/hook/backstyle/NativeBackHook;->logFailure()V
+    return-void
+.end method
+
+.method private static nativeShow$locked(Landroid/view/View;Lcom/panl/hook/backstyle/NativeSidebarBridge;)Z
+    .locals 4
+    invoke-static {p0}, Lcom/panl/hook/backstyle/MainHook;->nativeDelay(Landroid/view/View;)J
+    move-result-wide v0
+    const-wide/16 v2, 0x0
+    cmp-long v0, v0, v2
+    if-ltz v0, :off
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    move-result v0
+    if-eqz v0, :off
+    if-eqz p1, :off
+    invoke-virtual {p1, p0}, Lcom/panl/hook/backstyle/NativeSidebarBridge;->show(Landroid/view/View;)Z
+    move-result v0
+    return v0
+    :off
+    const/4 v0, 0x0
+    return v0
+.end method
+
+.method private static nativeRestore(Ljava/lang/Object;Ljava/lang/String;F)V
+    .locals 1
+    :try_start
+    invoke-static {p0, p1, p2}, Lcom/panl/hook/backstyle/MainHook;->nativeSet(Ljava/lang/Object;Ljava/lang/String;F)V
+    :try_end
+    .catch Ljava/lang/Throwable; {:try_start .. :try_end} :failed
+    return-void
+    :failed
+    move-exception v0
+    invoke-static {}, Lcom/panl/hook/backstyle/NativeBackHook;->logFailure()V
+    return-void
+.end method
+
+.method private static oplusPathResult$locked(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 2
+    iget-object v0, p0, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->thisObject:Ljava/lang/Object;
+    invoke-static {v0}, Lcom/panl/hook/backstyle/MainHook;->oplusObservePath(Ljava/lang/Object;)Z
+    move-result v0
+    if-eqz v0, :done
+    invoke-static {}, Lcom/panl/hook/backstyle/OplusThread;->get_oplusReplace()Z
+    move-result v0
+    if-eqz v0, :done
+    iget-object v0, p0, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->thisObject:Ljava/lang/Object;
+    const-string v1, "callback"
+    invoke-static {v0, v1}, Lde/robv/android/xposed/XposedHelpers;->getObjectField(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v0
+    invoke-static {}, Lcom/panl/hook/backstyle/OplusThread;->get_oplusFrame()Landroid/view/View;
+    move-result-object v1
+    if-ne v0, v1, :done
+    new-instance v0, Landroid/graphics/Path;
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+    invoke-virtual {p0, v0}, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->setResult(Ljava/lang/Object;)V
+    :done
+    return-void
+.end method
+
+.method private static oplusRefresh$locked(Landroid/view/View;)V
+    .locals 0
+    invoke-static {p0}, Lcom/panl/hook/backstyle/MainHook;->refreshConfig(Landroid/view/View;)V
+    return-void
+.end method
+
+.method private static oplusTimer$locked(Lcom/panl/hook/backstyle/OplusSidebarTask;)V
+    .locals 3
+    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sSidebarTask:Ljava/lang/Runnable;
+    if-ne v0, p0, :stale
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->H()V
+    iget-object v0, p0, Lcom/panl/hook/backstyle/OplusSidebarTask;->view:Landroid/view/View;
+    sget-object v1, Lcom/panl/hook/backstyle/MainHook;->sGeoView:Landroid/view/View;
+    if-ne v0, v1, :stale
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusThread;->isOwner(Landroid/view/View;)Z
+    move-result v1
+    if-eqz v1, :stale
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->holdStillActive()Z
+    move-result v0
+    if-eqz v0, :inactive
+    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sGeoView:Landroid/view/View;
+    if-eqz v0, :no_view
+    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
+    move-result v1
+    if-eqz v1, :no_view
+    invoke-static {v0}, Lcom/panl/hook/backstyle/MainHook;->refreshConfig(Landroid/view/View;)V
+    sget-boolean v1, Lcom/panl/hook/backstyle/MainHook;->sSidebarOn:Z
+    if-eqz v1, :disabled
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->showSidebar()V
+    return-void
+    :stale
+    const-string v0, "timer reject: stale task/view/owner"
+    goto :reject
+    :inactive
+    const-string v0, "timer reject: inactive or finger released"
+    goto :reject
+    :no_view
+    const-string v0, "timer reject: no attached geometry view"
+    goto :reject
+    :disabled
+    const-string v0, "timer reject: sidebar disabled"
+    :reject
+    invoke-static {v0}, Lcom/panl/hook/backstyle/OplusDiag;->event(Ljava/lang/String;)V
+    return-void
+.end method
+
+# View-owner-thread-only, thread-local outer-frame observation; no getPath/onDraw calls here.
+.method private static oplusObservePath$locked(Ljava/lang/Object;)Z
+    .locals 2
+    invoke-static {}, Lcom/panl/hook/backstyle/OplusThread;->get_oplusDepth()I
+    move-result v0
+    const/4 v1, 0x1
+    if-ne v0, v1, :no
+    const-string v0, "callback"
+    invoke-static {p0, v0}, Lde/robv/android/xposed/XposedHelpers;->getObjectField(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v0
+    invoke-static {}, Lcom/panl/hook/backstyle/OplusThread;->get_oplusFrame()Landroid/view/View;
+    move-result-object v1
+    if-eqz v1, :no
+    if-ne v0, v1, :no
+    invoke-static {v1}, Lcom/panl/hook/backstyle/OplusThread;->isOwner(Landroid/view/View;)Z
+    move-result v0
+    return v0
+    :no
+    const/4 v0, 0x0
+    return v0
+.end method
+
+# MainHook.class serializes the legacy shared renderer/config/geometry/lifecycle.
+# Never hold this monitor across the stock onDraw; transaction flags are ThreadLocal.
+.method private static oplusDrawLocked$locked(Lcom/panl/hook/backstyle/OplusDrawHook;Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 0
+    invoke-virtual {p0, p1}, Lcom/panl/hook/backstyle/OplusDrawHook;->beforeOwned(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    return-void
+.end method
+.method private static oplusDispatch$locked(Lsy;Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 0
+    invoke-virtual {p0, p1}, Lsy;->afterOwned(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    return-void
+.end method
+
+.method private static oplusTimer$locked()V
+    .locals 2
+    sget-object v0, Lcom/panl/hook/backstyle/MainHook;->sSidebarTask:Ljava/lang/Runnable;
+    instance-of v1, v0, Lcom/panl/hook/backstyle/OplusSidebarTask;
+    if-eqz v1, :done
+    check-cast v0, Lcom/panl/hook/backstyle/OplusSidebarTask;
+    iget-object v1, v0, Lcom/panl/hook/backstyle/OplusSidebarTask;->view:Landroid/view/View;
+    invoke-static {v1}, Lcom/panl/hook/backstyle/OplusThread;->isOwner(Landroid/view/View;)Z
+    move-result v1
+    if-eqz v1, :done
+    invoke-static {v0}, Lcom/panl/hook/backstyle/MainHook;->oplusTimer(Lcom/panl/hook/backstyle/OplusSidebarTask;)V
+    :done
+    return-void
+.end method
+
+.method public static bridge synthetic A(Z)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->A$locked(Z)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic B(Landroid/graphics/Bitmap;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->B$locked(Landroid/graphics/Bitmap;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic C(F)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->C$locked(F)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic D()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->D$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic E()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->E$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic F(Ljava/lang/Object;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->F$locked(Ljava/lang/Object;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic G()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->G$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic H()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->H$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic I(Z)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->I$locked(Z)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic J(Z)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->J$locked(Z)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic K(Ljava/lang/Object;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->K$locked(Ljava/lang/Object;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic L()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->L$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic M(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->M$locked(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
+    move-result-object v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-object v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic N()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->N$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic O(Ljava/lang/Object;)Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->O$locked(Ljava/lang/Object;)Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic P()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->P$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic Q(Ljava/lang/ClassLoader;I)Landroid/graphics/Bitmap;
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->Q$locked(Ljava/lang/ClassLoader;I)Landroid/graphics/Bitmap;
+    move-result-object v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-object v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic R(Landroid/view/View;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->R$locked(Landroid/view/View;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic S(Landroid/view/View;Landroid/graphics/Canvas;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->S$locked(Landroid/view/View;Landroid/graphics/Canvas;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic T(Landroid/graphics/Bitmap;[IFFFF)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p5}, Lcom/panl/hook/backstyle/MainHook;->T$locked(Landroid/graphics/Bitmap;[IFFFF)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic U()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->U$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic V()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->V$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic a()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->a$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static armSidebarTimer()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->armSidebarTimer$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic b()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->b$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic c()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->c$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static callShowSideBar()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->callShowSideBar$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static cancelSidebarTimer()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->cancelSidebarTimer$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic d()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->d$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static doShowSidebar(Landroid/view/View;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->doShowSidebar$locked(Landroid/view/View;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static drawPill(Landroid/view/View;Landroid/graphics/Canvas;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->drawPill$locked(Landroid/view/View;Landroid/graphics/Canvas;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic e()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->e$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic f()Landroid/graphics/RectF;
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->f$locked()Landroid/graphics/RectF;
+    move-result-object v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-object v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic g()F
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->g$locked()F
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic h()I
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->h$locked()I
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static holdStillActive()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->holdStillActive$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic i()Ljava/lang/ClassLoader;
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->i$locked()Ljava/lang/ClassLoader;
+    move-result-object v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-object v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic j()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->j$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic k()F
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->k$locked()F
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic l()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->l$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic m()J
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->m$locked()J
+    move-result-wide v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-wide v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic n()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->n$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic o()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->o$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic p()Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->p$locked()Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic q()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->q$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic r()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->r$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static refreshConfig(Landroid/view/View;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->refreshConfig$locked(Landroid/view/View;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic s()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->s$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method private static showSidebar()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->showSidebar$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic t()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->t$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic u()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->u$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic v()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->v$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic w(F)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->w$locked(F)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic x()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->x$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic y(I)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->y$locked(I)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static bridge synthetic z(J)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->z$locked(J)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static nativeDelay(Landroid/view/View;)J
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->nativeDelay$locked(Landroid/view/View;)J
+    move-result-wide v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-wide v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static nativeBeforeDraw(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->nativeBeforeDraw$locked(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static nativeAfterDraw(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->nativeAfterDraw$locked(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static nativeShow(Landroid/view/View;Lcom/panl/hook/backstyle/NativeSidebarBridge;)Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->nativeShow$locked(Landroid/view/View;Lcom/panl/hook/backstyle/NativeSidebarBridge;)Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static oplusPathResult(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->oplusPathResult$locked(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static oplusRefresh(Landroid/view/View;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->oplusRefresh$locked(Landroid/view/View;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static oplusTimer(Lcom/panl/hook/backstyle/OplusSidebarTask;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->oplusTimer$locked(Lcom/panl/hook/backstyle/OplusSidebarTask;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static oplusObservePath(Ljava/lang/Object;)Z
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p0}, Lcom/panl/hook/backstyle/MainHook;->oplusObservePath$locked(Ljava/lang/Object;)Z
+    move-result v1
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return v1
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static oplusDrawLocked(Lcom/panl/hook/backstyle/OplusDrawHook;Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->oplusDrawLocked$locked(Lcom/panl/hook/backstyle/OplusDrawHook;Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static oplusDispatch(Lsy;Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static/range {p0 .. p1}, Lcom/panl/hook/backstyle/MainHook;->oplusDispatch$locked(Lsy;Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
+.method public static oplusTimer()V
+    .locals 4
+    const-class v0, Lcom/panl/hook/backstyle/MainHook;
+    monitor-enter v0
+    :locked_start
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->oplusTimer$locked()V
+    monitor-exit v0
+    :locked_end
+    .catchall {:locked_start .. :locked_end} :locked_error
+    return-void
+    :locked_error
+    move-exception v3
+    monitor-exit v0
+    throw v3
+.end method
+
 # --- BackStyleMod: 隐藏智能侧边栏浮标 ---
 .method public static floatBarHideOn(Landroid/content/Context;)Z
     .locals 3
@@ -13466,4 +14852,3 @@
 
     return-void
 .end method
-

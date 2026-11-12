@@ -42,36 +42,9 @@
     .line 4
     .line 5
     .line 6
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->H()V
-
-    .line 7
-    .line 8
-    .line 9
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->U()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    if-nez p0, :cond_0
-
-    .line 14
-    .line 15
-    goto :goto_0
-
-    .line 16
-    :cond_0
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->V()V
-
-    .line 17
-    .line 18
-    .line 19
-    :goto_0
+    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->oplusTimer()V
     return-void
 
-    .line 20
     :pswitch_0
     :try_start_0
     const-string p0, "EmojiCompat.EmojiCompatInitializer.run"

@@ -26,8 +26,8 @@
 
 
 # virtual methods
-.method public afterHookedMethod(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
-    .locals 5
+.method public afterOwned(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 6
 
     .line 1
     iget v0, p0, Lsy;->a:I
@@ -180,6 +180,7 @@
 
     .line 68
     :pswitch_3
+    move-object v5, p1
     const-string p0, "BackStyleMod: \u539f\u8d1d\u585e\u5c14\u5f62\u72b6 "
 
     .line 69
@@ -189,6 +190,10 @@
 
     .line 71
     .line 72
+    invoke-static {v0}, Lcom/panl/hook/backstyle/MainHook;->oplusObservePath(Ljava/lang/Object;)Z
+    move-result v3
+    if-eqz v3, :goto_3
+
     invoke-static {v0}, Lcom/panl/hook/backstyle/MainHook;->O(Ljava/lang/Object;)Z
 
     .line 73
@@ -489,7 +494,7 @@
     .line 224
     .line 225
     :cond_a
-    invoke-virtual {p1}, Landroid/graphics/Path;->reset()V
+    invoke-static {v5}, Lcom/panl/hook/backstyle/MainHook;->oplusPathResult(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -585,60 +590,6 @@
 
     .line 35
     :pswitch_2
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->l()Z
-
-    .line 36
-    .line 37
-    .line 38
-    move-result p0
-
-    .line 39
-    if-eqz p0, :cond_1
-
-    .line 40
-    .line 41
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    .line 42
-    .line 43
-    .line 44
-    move-result-wide v0
-
-    .line 45
-    invoke-static {}, Lcom/panl/hook/backstyle/MainHook;->m()J
-
-    .line 46
-    .line 47
-    .line 48
-    move-result-wide v2
-
-    .line 49
-    sub-long/2addr v0, v2
-
-    .line 50
-    const-wide/16 v2, 0x3a98
-
-    .line 51
-    .line 52
-    cmp-long p0, v0, v2
-
-    .line 53
-    .line 54
-    if-gez p0, :cond_1
-
-    .line 55
-    .line 56
-    const/4 p0, 0x0
-
-    .line 57
-    invoke-virtual {p1, p0}, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->setResult(Ljava/lang/Object;)V
-
-    .line 58
-    .line 59
-    .line 60
-    goto :goto_0
-
-    .line 61
     :cond_1
     :try_start_0
     iget-object p0, p1, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->thisObject:Ljava/lang/Object;
@@ -793,4 +744,10 @@
         :pswitch_2
         :pswitch_1
     .end packed-switch
+.end method
+
+.method public afterHookedMethod(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .locals 0
+    invoke-static {p0, p1}, Lcom/panl/hook/backstyle/MainHook;->oplusDispatch(Lsy;Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    return-void
 .end method

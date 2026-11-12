@@ -52,7 +52,7 @@
 
     iget-object v1, p1, Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;->thisObject:Ljava/lang/Object;
 
-    if-nez v1, :ret
+    if-eqz v1, :ret
 
     const/4 v3, 0x0
 
@@ -92,7 +92,7 @@
     const/4 v5, 0x0
 
     :unwrap
-    if-nez v4, :haveact
+    if-eqz v4, :haveact
 
     instance-of v6, v4, Landroid/app/Activity;
 
@@ -120,7 +120,7 @@
     goto :unwrap
 
     :haveact
-    if-nez v2, :ret
+    if-eqz v2, :ret
 
     check-cast v2, Landroid/content/Context;
 
@@ -144,7 +144,7 @@
 
     cmp-long v9, v7, v5
 
-    if-gez v9, :nogl
+    if-ltz v9, :nogl
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -212,7 +212,7 @@
 
     cmpg-float v7, v5, v7
 
-    if-gez v7, :notleft
+    if-ltz v7, :notleft
 
     cmpl-float v4, v5, v4
 
@@ -285,7 +285,7 @@
 
     cmpg-float v4, v4, v5
 
-    if-gez v4, :reset
+    if-ltz v4, :reset
 
     sget v4, Lcom/panl/hook/backstyle/DeskGestureHook;->sDy:F
 
@@ -297,13 +297,13 @@
 
     cmpl-float v4, v4, v5
 
-    if-lez v4, :reset
+    if-gtz v4, :reset
 
     const/4 v4, 0x0
 
     sput-boolean v4, Lcom/panl/hook/backstyle/DeskGestureHook;->sActive:Z
 
-    if-nez v3, :ret
+    if-eqz v3, :ret
 
     const-string v4, "BackStyleMod: desktop-back fired"
 
