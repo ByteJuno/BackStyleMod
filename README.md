@@ -60,6 +60,13 @@ adb uninstall com.panl.hook.backstyle      # 换签名必须卸载
 逆向结论、踩坑记录、构建命令见 [`smali-patch/README.md`](smali-patch/README.md) 与
 [`smali-patch/docs/FINDINGS.md`](smali-patch/docs/FINDINGS.md)。
 
+两个分支对应两个包：
+
+| 分支 | 对应 Release 资产 | 说明 |
+|---|---|---|
+| `main` | `backstyle-7.0-phone.apk` | 手机版 |
+| [`tablet`](../../tree/tablet) | `backstyle-7.0-tablet.apk` | 平板版，多 `NativeBackGesture` / `NativeBackHook` / `NativeSidebarBridge`，含 GestureUI 线程门控修复 |
+
 ## 本 fork 的更新日志
 
 ### 7.0
