@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="in_progress">قيد التقدم</string>
+    <string name="indeterminate">تم وضع علامة في المربّع بشكل جزئي</string>
+    <string name="not_selected">غير محدّد</string>
+    <string name="selected">محدّد</string>
+    <string name="state_empty">حقل فارغ</string>
+    <string name="template_percent">%1$d في المئة.</string>
+</resources>

@@ -17,3 +17,10 @@ local.properties
 *.aab
 *.ap_
 BackStyleMod-*.zip
+
+# ---- 本 fork 的 smali 补丁工程 ----
+# 上游规则 *.apk 会连回滚用的基线包一起忽略，这里放行
+!smali-patch/apk/base.apk
+smali-patch/apktool/build/# 签名钥匙不进 public 仓库
+smali-patch/signing/*.keystore
+smali-patch/signing/*.jks

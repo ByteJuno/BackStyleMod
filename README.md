@@ -1,5 +1,19 @@
 # 返回样式 · BackStyleMod
 
+> **这是 fork。** 原项目由 **sakurakingfifth-debug** 编写（MIT），见 <https://github.com/sakurakingfifth-debug/BackStyleMod>。
+>
+> 本 fork 只做加法，没有改动 `app/` 下的上游源码：
+>
+> - **桌面也能用返回手势**（`backstyle_desk_back`，默认开）—— 清掉 ColorOS 在桌面焦点下注册的全屏手势排除区
+> - **隐藏智能侧边栏浮标**（`backstyle_floatbar_hide`，默认开）—— 浮标本要停留 3 秒再消失，改成永不显示
+> - 平板适配（原生返回 / 长滑侧栏桥接）
+>
+> 补丁以 apktool 工程形式放在 [`smali-patch/`](smali-patch/)，说明见 [NOTICE.md](NOTICE.md)。
+>
+> ⚠️ **LSPosed 作用域要勾三个**：系统界面、桌面、**智能侧边栏**（`com.coloros.smartsidebar`），漏勾浮标功能不生效。
+>
+> 只想要原版功能的话，请直接用上游仓库的包。
+
 我懒，所以README.md是大肥鱼写的
 
 一个 LSPosed 模块：把侧滑返回那个箭头背后的「水滴」换成**竖向胶囊**，可以调尺寸、透明度、背景模糊，长按还能呼出智能侧边栏。

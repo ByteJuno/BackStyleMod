@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="in_progress">Виконується</string>
+    <string name="indeterminate">Частково вибрано</string>
+    <string name="not_selected">Не вибрано</string>
+    <string name="selected">Вибрано</string>
+    <string name="state_empty">Пусто</string>
+    <string name="template_percent">Відсотків: %1$d.</string>
+</resources>

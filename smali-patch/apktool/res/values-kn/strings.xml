@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="in_progress">ಪ್ರಗತಿಯಲ್ಲಿದೆ</string>
+    <string name="indeterminate">ಭಾಗಶಃ ಪರೀಕ್ಷಿಸಲಾಗಿದೆ</string>
+    <string name="not_selected">ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ</string>
+    <string name="selected">ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ</string>
+    <string name="state_empty">ಖಾಲಿ</string>
+    <string name="template_percent">%1$d ಶೇಕಡಾ.</string>
+</resources>
