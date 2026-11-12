@@ -1,18 +1,72 @@
-# 返回样式 · BackStyleMod
+# 返回样式 · BackStyleMod（fork）
 
-> **这是 fork。** 原项目由 **sakurakingfifth-debug** 编写（MIT），见 <https://github.com/sakurakingfifth-debug/BackStyleMod>。
+> **这是 fork，不是原项目。** 原作者是 **[sakurakingfifth-debug](https://github.com/sakurakingfifth-debug)**，
+> 项目 [sakurakingfifth-debug/BackStyleMod](https://github.com/sakurakingfifth-debug/BackStyleMod)，MIT 许可。
 >
-> 本 fork 只做加法，没有改动 `app/` 下的上游源码：
->
-> - **桌面也能用返回手势**（`backstyle_desk_back`，默认开）—— 清掉 ColorOS 在桌面焦点下注册的全屏手势排除区
-> - **隐藏智能侧边栏浮标**（`backstyle_floatbar_hide`，默认开）—— 浮标本要停留 3 秒再消失，改成永不显示
-> - 平板适配（原生返回 / 长滑侧栏桥接）
->
-> 补丁以 apktool 工程形式放在 [`smali-patch/`](smali-patch/)，说明见 [NOTICE.md](NOTICE.md)。
->
-> ⚠️ **LSPosed 作用域要勾三个**：系统界面、桌面、**智能侧边栏**（`com.coloros.smartsidebar`），漏勾浮标功能不生效。
->
-> 只想要原版功能的话，请直接用上游仓库的包。
+> 本 fork 由 [ByteJuno](https://github.com/ByteJuno) 维护，**没有改动 `app/` 下的上游源码**，
+> 只额外做了几个补丁。完整说明见 [NOTICE.md](NOTICE.md)。
+
+**下载**：<https://github.com/ByteJuno/BackStyleMod/releases>
+
+- 手机 → `backstyle-7.0-phone.apk`
+- 平板 → `backstyle-7.0-tablet.apk`
+
+两包同签名（`CN=BackStyleMod`），与上游官方包（`CN=panl`）**不是同一把钥匙**，不能互相覆盖安装。
+
+---
+
+## 本 fork 改了什么
+
+| 功能 | 设置项（`Settings.Global`） | 默认 | 说明 |
+|---|---|---|---|
+| **桌面也能用返回手势** | `backstyle_desk_back` | 开 | ColorOS 在桌面获得焦点时会由 SystemUI 注册一块几乎全屏的手势排除区（实测 `SkRegion((0,141,1272,2772))`），把边缘手势吃掉。本 fork 清空它，并清掉 `LayoutParams.backGestureRestriction` 的 bit0 |
+| **隐藏智能侧边栏浮标** | `backstyle_floatbar_hide` | 开 | 浮标收起后原本要停留 3 秒（`FloatBarMainView.scheduleAutoHideDelay()` 里硬编码 `3000`），改成永不显示 |
+| 平板适配 | — | — | 原生返回 / 长滑侧栏桥接 |
+| 长滑时长下限 0 ms | `backstyle_pill_sidebar_ms` | — | **上游 6.2/6.3 起已自行实现**（0~15000 ms + 手填），此处仅保留早期补丁线上的同类改动 |
+
+补丁以 apktool 反编译工程的形式放在 [`smali-patch/`](smali-patch/)，起步时上游还没开源，
+所以是 smali 而不是源码；长期应该改写成源码级补丁。
+
+想关掉某个功能：
+
+```bash
+adb shell settings put global backstyle_desk_back 0
+adb shell settings put global backstyle_floatbar_hide 0
+```
+
+## ⚠️ LSPosed 作用域要勾三个
+
+本 fork 的 hook 分布在三个进程，**三个都要勾**，漏勾不会报错、只是静默不生效：
+
+| 进程 | 包名 | 作用 |
+|---|---|---|
+| 系统界面 | `com.android.systemui` | 胶囊绘制、长滑呼出侧栏 |
+| 桌面 | `com.android.launcher` | 桌面返回手势 |
+| 智能侧边栏 | `com.coloros.smartsidebar` | 隐藏浮标 |
+
+## 安装
+
+1. 装 APK，LSPosed 里启用模块，作用域勾上表三个
+2. `killall com.android.systemui`，**再重启一次手机**（重装模块后 launcher 常常不再被注入）
+3. 打开 App 调参数
+
+> 浮标不想勾作用域也能先凑合：`adb shell settings put secure edge_panel_os_float_bar_alpha 0`
+> （合法区间 0~80，默认 40）。缺点是只做到透明，浮标的触摸区还在。恢复：设回 `40`。
+
+## 还原成上游行为
+
+```bash
+adb uninstall com.panl.hook.backstyle      # 换签名必须卸载
+# 然后装上游官方包：https://github.com/sakurakingfifth-debug/BackStyleMod/releases
+```
+
+设置项在卸载后会丢失，重新调一遍即可。
+
+---
+
+以下为**上游 README 原文**，未作修改。
+
+---
 
 我懒，所以README.md是大肥鱼写的
 
@@ -111,6 +165,14 @@ export JAVA_HOME=/path/to/jbr      # 需要 JDK 17+，实测 JDK 25
 ### 3.x ~ 5.x
 - 胶囊几何、出现/消失动画、截屏模糊、长滑侧边栏、自动反色
 
+## 本 fork 的更新日志
+
+### 7.0
+- 新增「桌面也能用返回手势」（`backstyle_desk_back`）
+- 新增「隐藏智能侧边栏浮标」（`backstyle_floatbar_hide`）
+- 平板版合并 `tablet-adaptation` 的 GestureUI 线程修复与原生侧栏桥接
+- 手机 / 平板统一版本号，versionCode 70 / 71
+
 ## License
 
-MIT
+MIT，见 [LICENSE](LICENSE)（版权归 sakurakingfifth-debug，本 fork 未修改该文件）。
