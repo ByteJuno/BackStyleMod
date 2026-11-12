@@ -16,7 +16,7 @@ scripts/build.ps1     一键构建 + 签名 + 安装
 scripts/smali_static_check.py       smali 静态检查（寄存器越界 / move-result 纪律 / 禁用 API）
 scripts/smali_check_selftest.py     上面那个检查器的自测
 scripts/swipe-left-edge.sh          用 sendevent 模拟边缘滑动（input swipe 会被 SystemUI 丢弃）
-signing/backstyle.keystore          本 fork 发布用签名（口令见 signing/README.md）
+signing/README.md                   签名说明（keystore 不随仓库分发，见下方「签名」）
 ```
 
 `tools/apktool.jar` 没有放进仓库（约 15 MB），自行下载 apktool 3.0.3 后指定路径即可。
@@ -42,7 +42,7 @@ signing/backstyle.keystore          本 fork 发布用签名（口令见 signing
 ```powershell
 # apktool 只认 ASCII 路径，含中文的路径会失败
 # 每次改动必须提升 versionCode，否则 LSPosed 的 dex2oat 缓存不失效，装了跑的还是旧代码
-pwsh -File scripts/build.ps1 -VersionCode 72 -VersionName 7.1 -Keystore ..\..\signing\... -NoInstall
+pwsh -File scripts/build.ps1 -VersionCode 72 -VersionName 7.1 -NoInstall
 ```
 
 构建前建议先跑静态检查（不需要 aapt2）：
@@ -72,6 +72,13 @@ adb shell su -c 'ls -t /data/adb/lspd/log/modules_*.log | head -1'
 ```
 
 重装模块后 `com.android.launcher` 常常不再被注入，重启一次手机即可恢复。
+
+## 签名
+
+发布用的 keystore **不在本仓库**：这里是 public 仓库，公开签名钥匙等于任何人都能签出
+被系统接受的「更新」。构建时用 `-Keystore` 指定本机路径，或向维护者索取。
+上游另有一把官方钥匙（`keystore/backstyle.jks`，公开在仓库里），签名主体是 `CN=panl`，
+与本 fork 的 `CN=BackStyleMod` 不同，两边的包不能互相覆盖安装。
 
 ## 回滚
 
